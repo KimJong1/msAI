@@ -22,6 +22,6 @@ Python 코드를 자동 분석하고, 해당 코드에 대한 **기능 테스트
 - Azure OpenAI (GPT)
 - Python 3.11+
 - pytest / pytest-mock
-- Streamlit (옵션)
+- Streamlit
 
 > 🚀 테스트 코드 작성을 LLM에게 맡기고, 더 중요한 로직 개발에 집중하세요!
