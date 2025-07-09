@@ -1,0 +1,20 @@
+Please create test cases with test code for the code below based on the Test-Case guide
+
+
+chat_client = AzureOpenAI(
+    api_version="2024-12-01-preview",
+    azure_endpoint=openai_endpoint,
+    api_key=openai_api_key
+)
+
+
+Please create test cases with test code for the code below based on the Test-Case guide
+
+def show_phone_number():
+    phone = input("휴대폰 번호를 입력하세요 (예: 010-1234-5678): ")
+    print(f"입력한 휴대폰 번호는: {phone}")
+
+show_phone_number()
+
+
+show test case guide
