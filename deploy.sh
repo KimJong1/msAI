@@ -1,6 +1,5 @@
 pip install streamlit
 pip install openai
-pip install os
 pip install load_dotenv
 pip install pandas
 
