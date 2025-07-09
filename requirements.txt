@@ -4,3 +4,4 @@ openai
 pandas
 xlsxwriter
 openpyxl
+tabulate
