@@ -1,4 +1,6 @@
 streamlit
-python-dotenv
+load_dotenv
 openai
 pandas
+xlsxwriter
+openpyxl
