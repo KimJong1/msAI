@@ -68,7 +68,7 @@ streamlit run aiSearch.py
 
 ``` azure portal을 통해 web app 사전 구성 필요
 
-![webapp1](https://github.com/user-attachments/assets/d70973eb-fcb8-40d7-9937-58eb3337650b)
+<img width="1050" height="287" alt="Image" src="https://github.com/user-attachments/assets/0e776e75-a01a-40d4-94eb-b8db96e4751c"/>
 
 
 ## 💬 사용 예시
