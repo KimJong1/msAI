@@ -59,15 +59,10 @@ SEARCH_INDEX_NAME=your-index-name
 
 ---
 
-4. **로컬 실행**
+4. **실행**
 
 ```bash
 streamlit run aiSearch.py
-
-5. **웹 앱 실행**
-
-``` azure portal을 통해 web app 사전 구성 필요
-![webapp1](https://github.com/user-attachments/assets/0e776e75-a01a-40d4-94eb-b8db96e4751c)
 
 
 ## 💬 사용 예시
