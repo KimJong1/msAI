@@ -67,7 +67,7 @@ streamlit run aiSearch.py
 5. **웹 앱 실행**
 
 ``` azure portal을 통해 web app 사전 구성 필요
-![webapp1]([https://github.com/user-attachments/assets/abe88ef1-09b9-42ad-b678-83aeedc3523b](https://github.com/user-attachments/assets/0e776e75-a01a-40d4-94eb-b8db96e4751c))
+![webapp1](https://github.com/user-attachments/assets/0e776e75-a01a-40d4-94eb-b8db96e4751c)
 
 
 ## 💬 사용 예시
