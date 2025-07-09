@@ -2,6 +2,9 @@ import os
 import streamlit as st
 from dotenv import load_dotenv
 from openai import AzureOpenAI
+import pandas as pd
+from io import BytesIO
+import re
 
 # 환경 변수 로드
 load_dotenv()
@@ -13,6 +16,39 @@ chat_deployment_name = os.getenv("CHAT_DEPLOYMENT_NAME")
 search_endpoint = os.getenv("SEARCH_ENDPOINT")
 search_api_key = os.getenv("SEARCH_API_KEY")
 search_index_name = os.getenv("SEARCH_INDEX_NAME")
+
+
+def extract_table_to_dataframe(text: str) -> pd.DataFrame:
+    """
+    마크다운 또는 일반적인 표 텍스트에서 테이블을 추출하여 DataFrame으로 변환
+    """
+    lines = [line.strip() for line in text.splitlines() if '|' in line]
+    if not lines or len(lines) < 2:
+        return None
+    
+    # '|' 기준으로 분할 및 양쪽 공백 제거
+    table = [list(map(str.strip, line.strip('|').split('|'))) for line in lines]
+    
+    # 헤더와 데이터 구분
+    header = table[0]
+    rows = table[2:] if re.match(r'^[- ]+$', ''.join(table[1])) else table[1:]
+
+    df = pd.DataFrame(rows, columns=header)
+    return df
+
+
+def get_excel_download_button(df: pd.DataFrame, filename="test_cases.xlsx"):
+    buffer = BytesIO()
+    with pd.ExcelWriter(buffer, engine="xlsxwriter") as writer:
+        df.to_excel(writer, index=False, sheet_name="TestCases")
+    buffer.seek(0)
+    st.download_button(
+        label="📥 테스트 케이스 엑셀 다운로드",
+        data=buffer,
+        file_name=filename,
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
+
 
 # OpenAI 클라이언트 초기화
 chat_client = AzureOpenAI(
@@ -83,6 +119,10 @@ if user_input := st.chat_input("질문 또는 테스트 케이스 요청을 입�
         if "not found" in reply.lower() or "찾지 못했습니다" in reply.lower():
             raise ValueError("Fallback triggered")
 
+        df = extract_table_to_dataframe(reply)
+        if df is not None:
+            get_excel_download_button(df)
+        
     except Exception:
         fallback_response = chat_client.chat.completions.create(
             model=chat_deployment_name,
@@ -91,3 +131,4 @@ if user_input := st.chat_input("질문 또는 테스트 케이스 요청을 입�
         fallback_reply = fallback_response.choices[0].message.content
         st.chat_message("assistant").markdown(fallback_reply)
         st.session_state.messages.append({"role": "assistant", "content": fallback_reply})
+        
