@@ -10,6 +10,7 @@ AI와 Azure Cognitive Search (RAG: Retrieval-Augmented Generation)를 활용하�
 - ✅ 사용자 질문에 따라 **표 형식 테스트 케이스** 및 **Python 테스트 코드** 자동 생성
 - ✅ 직관적인 **Streamlit 인터페이스** 제공
 - ✅ RAG 인덱스에 정보가 없을 경우에도 **대화 이력 기반 fallback 응답** 처리
+- ✅ Azure Web App 서비스를 통한 배포
 
 ---
 
@@ -34,8 +35,8 @@ AI와 Azure Cognitive Search (RAG: Retrieval-Augmented Generation)를 활용하�
 1. **레포지토리 클론**
 
 ```bash
-git clone https://github.com/your-username/testcase-rag-app.git
-cd testcase-rag-app
+git clone https://github.com/your-username/msAI.git
+cd msAI
 
 ---
 
@@ -58,10 +59,16 @@ SEARCH_INDEX_NAME=your-index-name
 
 ---
 
-4. **앱 실행**
+4. **로컬 실행**
 
 ```bash
 streamlit run aiSearch.py
+
+5. **웹 앱 실행**
+
+``` azure portal을 통해 web app 사전 구성 필요
+
+![webapp1](https://github.com/user-attachments/assets/d70973eb-fcb8-40d7-9937-58eb3337650b)
 
 
 ## 💬 사용 예시
