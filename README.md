@@ -95,3 +95,6 @@ streamlit run aiSearch.py
 
 > 💡 **Tip:** 보다 정확하고 일관된 응답을 원하신다면, 질문을 **영어로 입력하는 것**을 추천드립니다.
 
+---
+https://user11mvp-d0f3hceke3bjcya6.eastus2-01.azurewebsites.net/
+
