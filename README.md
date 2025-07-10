@@ -4,13 +4,34 @@ AI와 Azure Cognitive Search (RAG: Retrieval-Augmented Generation)를 활용하�
 
 ---
 
+
+## 대상 사용자
+- QA
+- 테스트 매니저
+- 개발자 등 테스트 케이스 작성 실무자
+
+---
+
+## 문제
+- 서비스 별 관리되는 테스트 케이스 양식의 일관성 부족  
+- 개발자가 놓친 테스트 케이스 존재 가능성  
+- 전사 차원의 규제나 규칙이 적용되지 않는 경우 발생  
+
+---
+
+## 솔루션 개요
+- Azure AI + Azure Search 기반 RAG 활용을 통해  
+  통일화된 테스트 케이스 생성
+
+  
+
 ## 📌 주요 기능
 
 - ✅ **Azure OpenAI + Azure Cognitive Search 기반 RAG** 기술로 지식 기반 테스트 케이스 생성
 - ✅ 사용자 질문에 따라 **표 형식 테스트 케이스** 및 **Python 테스트 코드** 자동 생성
 - ✅ 직관적인 **Streamlit 인터페이스** 제공
 - ✅ RAG 인덱스에 정보가 없을 경우에도 **대화 이력 기반 fallback 응답** 처리
-
+- ✅ Azure Web App으로 배포 환경 구현
 ---
 
 ## 📎 사전 준비 사항
