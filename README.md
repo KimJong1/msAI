@@ -50,7 +50,8 @@ AI와 Azure Cognitive Search (RAG: Retrieval-Augmented Generation)를 활용하�
 
 ---
 
-![image](https://github.com/user-attachments/assets/81d71b03-413b-44dd-b739-be0a9c0b2117)
+![제목 없음](https://github.com/user-attachments/assets/788340c3-8793-48f3-84af-d9ff59d084c3)
+
 
 
 ---
